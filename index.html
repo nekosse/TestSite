@@ -2,23 +2,41 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>JavaScript_Windows_Store_App</title>
-    <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
-    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
-    <!-- JavaScript_Windows_Store_App references -->
-    <link href="/css/default.css" rel="stylesheet" />
-    <script src="default.js"></script>
-    <script src="send_email.js"></script>
+
+
 </head>
 <body>
     <p>
-     <input type="button" id="btnSend" value="Send" style="width: 120px;" />
-     <input type="button" id="btnCancel" value="Cancel" style="width: 120px;" disabled="disabled" />
+		<input type="file" id="input_img" onchange="fileChange()" accept="image/*">
     </p>
     <p>
         <span id="textStatus"></span>
     </p>
 </body>
 </html>
+
+<script>
+	function fileChange(){
+	var file = document.getElementById('input_img');
+	var form = new FormData();
+	form.append("image", file.files[0])
+
+	var settings = {
+	  "url": "https://api.imgbb.com/1/upload?key=7849ace46f6df21b6cf301910272b61f",
+	  "method": "POST",
+	  "timeout": 0,
+	  "processData": false,
+	  "mimeType": "multipart/form-data",
+	  "contentType": false,
+	  "data": form
+	};
+
+
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	  var jx = JSON.parse(response);
+	  console.log(jx.data.url);
+
+
+	});
+</script>
