@@ -35,7 +35,12 @@
 </script>
 
     <p>
-		<input type="file" id="input_img" name="image" onchange="fileChangee()" accept="image/*" capture>
+
+		
+	<form action="..." method="post" enctype="multipart/form-data"> 
+	<input type="file" id="input_img" name="image" accept="image/*" capture>	
+    <input type="submit" value="Upload" onchange="fileChange()" > 
+</form>
     </p>
     <p>
         <span id="textStatus"></span>
