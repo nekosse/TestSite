@@ -2,17 +2,23 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Git Login App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <title>JavaScript_Windows_Store_App</title>
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    <!-- JavaScript_Windows_Store_App references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+    <script src="/js/send_email.js"></script>
 </head>
 <body>
-   <div>
-       <button id="login">
-           Upload Files to Drive
-       </button>
-   </div> 
+    <p>
+     <input type="button" id="btnSend" value="Send" style="width: 120px;" />
+     <input type="button" id="btnCancel" value="Cancel" style="width: 120px;" disabled="disabled" />
+    </p>
+    <p>
+        <span id="textStatus"></span>
+    </p>
 </body>
 </html>
