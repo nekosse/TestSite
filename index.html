@@ -26,6 +26,7 @@
 
 	$.ajax(settings).done(function (response) {
 	  console.log(response);
+	  document.write(response);
 	  var jx = JSON.parse(response);
 	  console.log(jx.data.url);
 
