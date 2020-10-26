@@ -22,10 +22,7 @@
 	  "contentType": false,
 	  "data": form
 	};
-	var img = document.createElement("img");
-	img.src = "char.gif";
-	var block = document.getElementById("x");
-	block.appendChild(img);
+	$('#gif').css('visibility', 'visible'); 
 	/*$.ajax(settings).done(function (response) {
 	  console.log(response);
 	  document.write(response);
@@ -43,7 +40,7 @@
 	
 	<input type="file" id="input_img" name="image" accept="image/*"  capture="environment">	
     <input type="submit" value="Upload" onclick="fileChange()" > 
-	<div id="x"></div>
+	 <img src="char.gif" id="gif" style="display: block; margin: 0 auto; width: 100px; visibility: hidden;"> 
     </p>
     <p>
         <span id="textStatus"></span>
