@@ -22,16 +22,18 @@
 	  "contentType": false,
 	  "data": form
 	};
-
-
-	$.ajax(settings).done(function (response) {
+	var img = document.createElement("img");
+	img.src = "char.gif";
+	var block = document.getElementById("x");
+	block.appendChild(img);
+	/*$.ajax(settings).done(function (response) {
 	  console.log(response);
 	  document.write(response);
 	  var jx = JSON.parse(response);
 	  console.log(jx.data.url);
 
 
-	});
+	});*/
 	}
 </script>
 
@@ -41,7 +43,7 @@
 	
 	<input type="file" id="input_img" name="image" accept="image/*"  capture="environment">	
     <input type="submit" value="Upload" onclick="fileChange()" > 
-
+	<div id="x"></div>
     </p>
     <p>
         <span id="textStatus"></span>
