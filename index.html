@@ -16,6 +16,10 @@ function renameFile(originalFile, newName) {
     });
 }
 
+function replaceAll(recherche, remplacement, chaineAModifier)
+{
+return chaineAModifier.split(recherche).join(remplacement);
+}
 	function fileChange(){
 	var element = document.getElementById('input_img');
 	var file = element.files[0];
@@ -29,6 +33,8 @@ function renameFile(originalFile, newName) {
 	  }
 	}
     var name = document.getElementById("email").value+"+"+type
+	 name = replaceAll(".", "$",name);
+	 name = replaceAll(".", "£",name);
 	console.log(name)
 	var newFile = renameFile(file,name )
 	var form = new FormData();
