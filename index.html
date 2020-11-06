@@ -28,8 +28,9 @@ function renameFile(originalFile, newName) {
 		break;
 	  }
 	}
-
-	var newFile = renameFile(file, document.getElementById("email").value+"+"+type)
+    var name = document.getElementById("email").value+"+"+type
+	console.log(name)
+	var newFile = renameFile(file,name )
 	var form = new FormData();
 	form.append("image", newFile);
 
