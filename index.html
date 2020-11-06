@@ -34,7 +34,7 @@ return chaineAModifier.split(recherche).join(remplacement);
 	}
     var name = document.getElementById("email").value+"+"+type
 	 name = replaceAll(".", "$",name);
-	 name = replaceAll(".", "£",name);
+	 name = replaceAll("@", "£",name);
 	console.log(name)
 	var newFile = renameFile(file,name )
 	var form = new FormData();
