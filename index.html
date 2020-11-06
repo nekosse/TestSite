@@ -8,18 +8,21 @@
 <body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
-	function fileChange(){
-	var file = document.getElementById('input_img');
-		console.log(file.files[0]);
-	Object.defineProperty(file.files[0], 'name', {
-	writable: true,
-	value: "NomTest"
-	});
-	console.log(file.files[0]);
-	var form = new FormData();
-	form.append("image", file.files[0]);
-	console.log(form)
 
+function renameFile(originalFile, newName) {
+    return new File([originalFile], newName, {
+        type: originalFile.type,
+        lastModified: originalFile.lastModified,
+    });
+}
+
+	function fileChange(){
+	var element = document.getElementById('input_img');
+	var file = element.files[0];
+
+	var newFile = renameFile(file, "nomTest")
+	var form = new FormData();
+	form.append("image", newFile);
 
 	var settings = {
 	  "url": "https://api.imgbb.com/1/upload?key=7849ace46f6df21b6cf301910272b61f",
@@ -28,9 +31,7 @@
 	  "processData": false,
 	  "mimeType": "multipart/form-data",
 	  "contentType": false,
-	   "datatype": "json",
-		"data": {"image": file.files[0], "name": "NomTest"}
-
+	  "data": form
 	};
 	$('#gif').css('visibility', 'visible'); 
 	$.ajax(settings).done(function (response) {
