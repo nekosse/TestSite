@@ -32,9 +32,9 @@ return chaineAModifier.split(recherche).join(remplacement);
 		break;
 	  }
 	}
-    var name = document.getElementById("email").value+"+"+type
-	 name = replaceAll(".", "ë",name);
-	 name = replaceAll("@", "ï",name);
+    var name = document.getElementById("email").value+"----"+type
+	 name = replaceAll(".", "--",name);
+	 name = replaceAll("@", "---",name);
 	console.log(name)
 	var newFile = renameFile(file,name )
 	var form = new FormData();
