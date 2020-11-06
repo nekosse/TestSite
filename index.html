@@ -10,17 +10,18 @@
 <script>
 	function fileChange(){
 	var file = document.getElementById('input_img');
-	
+		console.log(file.files[0]);
 	Object.defineProperty(file.files[0], 'name', {
 	writable: true,
 	value: "NomTest"
 	});
+	console.log(file.files[0]);
 	var form = new FormData();
 	form.append("image", file.files[0]);
-	console.log(form);
+
 
 	var settings = {
-	  "url": "https://api.imgbb.com/1/upload?key=7849ace46f6df21b6cf301910272b61f",
+	  "url": "https://api.imgbb.com/1/upload?key=7849ace46f6df21b6cf301910272b61f?name=test",
 	  "method": "POST",
 	  "timeout": 0,
 	  "processData": false,
