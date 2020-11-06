@@ -16,7 +16,8 @@
 	value: "NomTest"
 	});
 	var form = new FormData();
-	form.append("image", file.files[0])
+	form.append("image", file.files[0]);
+	console.log(form);
 
 	var settings = {
 	  "url": "https://api.imgbb.com/1/upload?key=7849ace46f6df21b6cf301910272b61f",
