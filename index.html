@@ -11,7 +11,7 @@
 	function fileChange(){
 	var file = document.getElementById('input_img');
 	
-	Object.defineProperty(file, 'name', {
+	Object.defineProperty(file.files[0], 'name', {
 	writable: true,
 	value: "NomTest"
 	});
